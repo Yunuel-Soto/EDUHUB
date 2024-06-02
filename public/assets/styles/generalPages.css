@@ -1,0 +1,211 @@
+.main_catalogo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    gap: 10px;
+}
+
+.main_users {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+}
+
+.main_catalogo .content_btnA {
+    width: 28%;
+    margin-top: 3rem;
+}
+
+.content_btnA button {
+    width: 100%;
+    height: 60px;
+    border: none;
+}
+
+.content_btnA:first-child button {
+    background-color: var(--color_btn_users);
+    color: var(--color_btn_letters);
+    border: 5px solid var(--btn_active_users);
+}
+
+.content_btnA button:hover {
+    cursor: pointer;
+}
+
+.content_btnA:first-child button:active {
+    background-color: var(--btn_active_users);
+    outline: none;
+}
+
+.content_btnA:first-child button:focus {
+    outline: none;
+}
+
+.content_btnA:nth-child(2) button {
+    background-color: var(--btn_log);
+    color: var(--color_btn_letters);
+    border: 5px solid var(--btn_active);
+}
+
+.content_btnA:nth-child(2) button:active {
+    background-color: var(--btn_active);
+    outline: none;
+}
+
+.content_btnA:nth-child(2) button:focus {
+    outline: none;
+}
+
+.content_table {
+    /* padding: 2rem; */
+}
+
+.tb_position {
+    position: static !important;
+}
+
+.table thead {
+    height: 10px;
+}
+
+.dt-length label {
+    margin-left: 0.5rem !important;
+}
+
+table {
+    width: 100%;
+}
+
+.content_table {
+    overflow-x: scroll;
+    padding: 5px;
+}
+
+table thead tr th {
+    text-align: start !important;
+}
+
+table thead tr th:first-child,
+table thead tr th:nth-child(2),
+table thead tr th:nth-child(3),
+table thead tr th:nth-child(5),
+table thead tr th:nth-child(4) {
+    width: 10% !important;
+    padding: 5px !important;
+}
+
+table thead tr th:nth-child(6),
+table thead tr th:nth-child(7) {
+    width: 17% !important;
+    padding: 5px !important;
+}
+
+table thead tr th:nth-child(4),
+table thead tr th:nth-child(8) {
+    width: 10% !important;
+    padding: 5px !important;
+}
+
+.dt-end {
+    display: flex !important;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+.content_table .content_btn {
+    width: 100%;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+}
+
+.content_table .content_btn button {
+    height: 35px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    padding: 1rem;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+
+.content_table .content_btn a {
+    width: 15%;
+    min-width: 190px;
+    display: flex;
+}
+
+.content_tb {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+}
+
+.content_tb .btn_colvis {
+    padding: 0.1rem;
+    width: 145px;
+    border: none;
+    background-color: var(--btn_log);
+    color: var(--color_btn_letters);
+    border-radius: 5px;
+    transition: 0.2s;
+    position: relative;
+}
+
+.content_tb .btn_colvis:focus {
+    outline: none;
+}
+.content_tb .btn_colvis:active,
+.content_tb .btn_colvis:hover {
+    border: none;
+    background-color: var(--btn_active);
+    cursor: pointer;
+}
+.content_tb .btn_colvis:active {
+    border: 1px solid var(--btn_active);
+    box-shadow: 0 0 5px var(--btn_active);
+}
+
+.dropdown_colums {
+    list-style: none;
+    background-color: var(--btn_log);
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.dropdown_colums li {
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.dropdown_colums li:hover {
+    cursor: pointer;
+    background-color: var(--btn_active);
+}
+
+.active_li {
+    background-color: var(--btn_active);
+}
+
+#myTable_2 {
+    margin: 0px;
+    width: 100% !important;
+}

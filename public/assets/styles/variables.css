@@ -1,0 +1,89 @@
+:root {
+    /* NEW COLORS */
+    /* ACTIVE ELEMENTS */
+    --color_anclas_active: #375a70;
+    --btn_active: #9a7034;
+    --btn_active_users: #375a70;
+
+    --error_input: red;
+
+    --btn_success: #53ae73;
+    --btn_success_active: #2c9e54;
+
+    /* BASE COLORS */
+    --color_login: #eeee;
+    --color_login_letters: #010101;
+    --color_login2: #eee;
+    --input_box_shadow: #2b7bb0;
+    --btn_log: #f09d25;
+    --color_btn_letters: #eeee;
+    --color_input: #707070;
+    --color_anclas: #2b7bb0;
+    --color_letters_input: #010101;
+
+    --color_hover_nav: #f09d25;
+    --color_hover_title_home: #f09d25;
+    --color_switch: #010101;
+    --color_back_switch: #2b7bb0;
+    --color_label: #f09d25;
+
+    --color_btn_users: #2b7bb0;
+    --color_btn_careers: #f09d25;
+}
+
+.label_color {
+    color: var(--color_label);
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    border: 1px solid var(--error_input) !important;
+    box-shadow: 0 0 5px var(--error_input) !important;
+}
+
+.error::after {
+    content: "Conflicto de fechas";
+    color: var(--error_input);
+    position: absolute;
+    font-size: 10px;
+    top: 32px;
+}
+
+.shadow {
+    visibility: hidden;
+}
+
+.navScroll {
+    position: sticky;
+    top: 0px;
+    background-color: #ffff;
+    transition: 0.2s all;
+    padding: 10px 10px 0rem 0px;
+}
+
+.sinNav {
+    transition: 0.2s all;
+    padding: 1.5rem;
+    background-color: #ffffff00;
+}
+
+.animate_start {
+    animation-duration: 1s;
+    animation-name: startAnimate;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+
+@keyframes startAnimate {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}

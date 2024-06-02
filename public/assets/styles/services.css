@@ -1,0 +1,132 @@
+.content_health {
+    width: 100%;
+    height: 100%;
+}
+
+.content_health header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 1.5rem;
+}
+
+.content_health header .content_btn {
+    width: 15%;
+    min-width: 150px;
+    height: 35px;
+}
+
+.content_health header .content_btn button {
+    font-size: 100%;
+    height: 100%;
+}
+
+.content_health h2 {
+    text-align: center;
+}
+
+.content_health main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+    row-gap: 1rem;
+    padding: 0 1rem 1rem 1rem;
+    justify-content: center;
+}
+
+.content_health main .card_health {
+    border: 2px solid var(--btn_log);
+    padding: 1rem;
+    border-radius: 10px;
+    flex-basis: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.animateCard {
+    animation-name: cards;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes cards {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.content_health main .card_health h3 {
+    text-align: center;
+}
+
+.content_health main .card_health picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 10px 0;
+    gap: 10px;
+}
+
+.content_health main .card_health picture img {
+    width: 40%;
+}
+
+.content_health main .card_health footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.delete {
+    background-color: #eb3232;
+    border-radius: 5px;
+}
+
+.delete:hover {
+    background-color: #c02121;
+    cursor: pointer;
+}
+
+.delete:active,
+.delete:focus {
+    outline: none;
+    background-color: #eb3232;
+    box-shadow: 0px 0px 2px 2px #c02121;
+}
+
+.update {
+    background-color: var(--btn_log);
+    border-radius: 5px;
+}
+
+.update:hover {
+    background-color: var(--btn_active);
+    cursor: pointer;
+}
+
+.update:active,
+.update:focus {
+    outline: none;
+    background-color: var(--btn_log);
+    box-shadow: 0px 0px 2px 2px var(--btn_active);
+}
+
+.card_health button {
+    min-width: 90px;
+    padding: 0.3rem;
+    font-size: 100%;
+    border: none;
+    color: var(--color_btn_letters);
+}

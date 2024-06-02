@@ -1,0 +1,153 @@
+.modal-content,
+.modal-header,
+.modal-footer {
+    background-color: var(--color_login);
+}
+#footer_error {
+    border-top: none !important;
+    text-align: center !important;
+}
+
+#footer_error button {
+    width: 20%;
+    background-color: var(--btn_log);
+}
+
+#modal_header_error img {
+    width: 10%;
+}
+#modal_delete img {
+    width: 14%;
+}
+
+#modal_delete h5 {
+    padding: 0.1rem;
+}
+
+#modal_header_error h5 {
+    background-color: rgba(255, 0, 0, 0.338);
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+#modal_header_error button {
+    position: absolute;
+    right: 17px;
+    top: 10px;
+}
+
+#modal_createTeacher h2 {
+    text-align: center;
+}
+
+#modal_createTeacher {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#modal_createTeacher {
+    background-color: #eeee;
+}
+
+#createTeacher .modal-footer .content_btn,
+#createStudent .modal-footer .content_btn,
+.updateTeacher .modal-footer .content_btn {
+    height: 35px !important;
+    width: 15%;
+    min-width: 130px;
+}
+
+.updateTeacher .modal-footer .content_btn {
+    width: 24% !important;
+}
+
+#createTeacher .modal-footer .content_btn button,
+#createStudent .modal-footer .content_btn button,
+.updateTeacher .modal-footer .content_btn button {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    text-wrap: nowrap;
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+.updateCareer .two-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#createCareer .content_btn button,
+.updateCareer .content_btn button {
+    height: 100%;
+}
+
+#createCareer .content_btn:nth-child(2),
+.updateCareer .content_btn:nth-child(2) {
+    width: 15%;
+    height: 35px;
+}
+
+#createCareer .content_btn:nth-child(2) button,
+.updateCareer .content_btn:nth-child(2) button {
+    font-size: 18px;
+}
+
+#createCareer .content_btn,
+.updateCareer .two-btn .content_btn {
+    width: 40px;
+    height: 40px;
+}
+
+.content_subjects {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content_subjects .content_input {
+    width: 100%;
+}
+
+.btn_delete {
+    background-color: var(--error_input) !important;
+}
+
+.cont_delete {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.two-btn {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: end;
+}
+
+.content_subjects li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.infoCareer section {
+    padding: 1rem;
+}
+
+.infoCareer section ul {
+    padding-left: 2rem;
+}
+
+.infoCareer .content_careers {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

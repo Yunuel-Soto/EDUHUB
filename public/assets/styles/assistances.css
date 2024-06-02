@@ -1,0 +1,129 @@
+.content_assistances {
+    padding: 0 2rem 0 2rem;
+}
+.content_assistances header .content_input {
+    width: 25%;
+}
+
+.content_assistances header .content_input select {
+    height: 30px;
+    background-color: #eeeeee4a;
+    font-size: 19px;
+}
+
+.content_assistances header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.content_assistances header p,
+.content_assistances header form {
+    width: 100%;
+}
+
+.content_assistances header form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.content_assistances header .content_btn {
+    width: 10%;
+}
+
+.content_assistances header .content_btn button {
+    height: 30px;
+    font-size: 100%;
+}
+
+.content_assistances header div {
+    text-align: start;
+    width: 100%;
+}
+
+.content_assistances header div ul {
+    list-style: decimal;
+    margin-left: 2rem;
+}
+
+.assistance_panel {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.assistance_sub_panel {
+    min-width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.content_table {
+    width: 100%;
+    min-width: 100%;
+}
+
+.assistance_list thead tr {
+    background-color: var(--btn_log);
+    color: #000;
+}
+
+.assistance_list thead tr th {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.assistance_list tbody tr:nth-child(1n) {
+    background-color: #f09b254c;
+}
+
+.assistance_list tbody tr:nth-child(2n) {
+    background-color: #f09d25b8;
+}
+
+.assistance_list tbody tr th {
+    font-weight: normal;
+    color: #000;
+}
+
+.btn-sm {
+    display: none !important;
+}
+
+.editable-click,
+a.editable-click {
+    border-bottom: none !important;
+}
+
+.form_editable {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 5px;
+}
+
+.input_editable {
+    border-radius: 5px;
+}
+
+.input_editable:active,
+.input_editable:focus {
+    outline: none;
+}
+
+.input_editable:focus {
+    border: 1px solid var(--input_box_shadow);
+    box-shadow: 0 0 5px var(--input_box_shadow);
+}
+
+.btn_editable {
+}
+
+.btn_accept {
+    background-color: var(--input_box_shadow);
+}

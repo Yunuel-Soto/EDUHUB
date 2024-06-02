@@ -1,0 +1,247 @@
+.content_addSchedul,
+.content_schedule {
+    width: 100%;
+    height: 100%;
+}
+
+.content_addSchedul h2,
+.content_schedule h2 {
+    text-align: center;
+}
+
+.content_addSchedul section {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.content_addSchedul header {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content_addSchedul header .content_input {
+    width: 27%;
+}
+
+.content_addSchedul header .content_input select,
+.content_addSchedul header .content_input input {
+    width: 100%;
+    height: 35px;
+    background-color: #fff;
+    padding-left: 0.5rem;
+}
+
+.content_addSchedul header .content_input label {
+    background-color: #fff;
+}
+
+.content_addSchedul header .two_input {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: start;
+}
+
+.content_addSchedul header .two_input .content_input {
+    display: flex;
+    width: 200px;
+}
+
+.content_addSchedul section .subHeader {
+    width: 211px;
+    height: 35px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.content_addSchedul section .subHeader .content_btn {
+    height: 100%;
+}
+
+.content_addSchedul section .subHeader .content_btn button {
+    height: 100%;
+    padding: 0px;
+    font-size: 100%;
+}
+
+.content_addSchedul section .content_subjects {
+    margin: 0px;
+    width: 100%;
+}
+
+.content_addSchedul section .content_subjects .content_btn button {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+}
+
+.content_addSchedul li .content_btn {
+    width: 188px;
+    height: 35px;
+}
+
+.content_addSchedul li {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 1rem;
+    gap: 25px;
+}
+
+.content_addSchedul li div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.content_addSchedul li ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.content_addSchedul li div .content_input {
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+.content_addSchedul li div .content_input select,
+.content_addSchedul li div .content_input input,
+.content_addSchedul li div .content_input label {
+    background-color: #fdfdfd;
+}
+
+.content_addSchedul li .plus_btn {
+    width: 40px;
+    height: 40px;
+}
+
+.content_addSchedul li .plus_btn button {
+    border-radius: 100%;
+}
+
+.content_addSchedul form > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
+}
+
+.content_addSchedul form > div .content_btn {
+    width: 13%;
+    margin-bottom: 1rem;
+}
+
+.content_addSchedul form > div .content_btn button {
+    height: 33px !important;
+    font-size: 100% !important;
+}
+
+.table-back {
+    background-color: #fdfdfd;
+}
+
+.content_calendar {
+    height: 58vh;
+    margin: 0 1rem 0 1rem;
+    overflow-y: scroll;
+}
+
+.content_calendar table {
+    position: relative;
+}
+
+.content_schedule header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 15px;
+}
+
+.content_schedule header h5 {
+    text-align: center;
+}
+
+.content_schedule header form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+}
+
+.content_schedule header .content_btn {
+    width: 10%;
+}
+
+.content_schedule header .content_btn button {
+    height: 30px;
+    font-size: 100%;
+}
+.content_schedule header .content_input {
+    width: 25%;
+}
+
+.content_schedule table tbody td {
+    position: relative;
+}
+
+.content_schedule header .content_input select {
+    height: 30px;
+    background-color: #eeeeee4a;
+    font-size: 19px;
+}
+
+.taskEschedule {
+    background-color: var(--btn_log);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 56px;
+}
+
+table .bodyTB {
+    padding: 0rem !important;
+}
+
+.content_addSchedul header .content_btn {
+    width: 20%;
+}
+
+.content_addSchedul header .content_btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: var(--color_btn_letters);
+    transition: all 0.2s;
+    height: 35px;
+    font-size: 100%;
+    background-color: var(--btn_success);
+}
+
+.content_addSchedul header .content_btn a:active {
+    background-color: var(--btn_success_active);
+    box-shadow: 0 0 5px var(--btn_success_active);
+    transform: scale(1);
+}
+
+.content_addSchedul header .content_btn a:hover {
+    text-decoration: none;
+    transform: scale(1.01);
+    color: var(--color_btn_letters);
+    cursor: pointer;
+}
