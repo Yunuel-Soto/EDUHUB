@@ -65,6 +65,7 @@
 .content_table {
     width: 100%;
     min-width: 100%;
+    /* transform: translateX(-102%); mover por 102% */
 }
 
 .assistance_list thead tr {
@@ -109,6 +110,8 @@ a.editable-click {
 
 .input_editable {
     border-radius: 5px;
+    border: none;
+    width: 80px;
 }
 
 .input_editable:active,
@@ -122,8 +125,38 @@ a.editable-click {
 }
 
 .btn_editable {
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    width: 35px;
+}
+
+.btn_editable:hover {
+    cursor: pointer;
 }
 
 .btn_accept {
     background-color: var(--input_box_shadow);
+}
+
+.btn_cancel {
+    background-color: var(--error_input);
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn_cancel:hover {
+    background-color: var(--error_hover);
+}
+
+.btn_accept:hover {
+    background-color: var(--color_anclas_active);
+}
+
+.a_editable {
+    color: #007bff !important;
+}
+
+.a_editable:hover {
+    cursor: pointer;
 }

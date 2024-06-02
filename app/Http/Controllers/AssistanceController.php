@@ -53,6 +53,7 @@ class AssistanceController extends Controller
             'Jueves',
             'Viernes',
             'Sabado',
+            'Domingo'
         ];
 
         $months = [
@@ -82,7 +83,14 @@ class AssistanceController extends Controller
 
         $numberDays = date_create($startDate)->diff(date_create($endDate));
 
+        // Obtiene la diferencia de semanas, para contar cuantas semanas son por cuatri
         $numberWeeks = $numberDays->format('%a')/7;
+
+        // Hacer algo parecido para saber en que semana va
+        $numberDaysCurrent = date_create($endDate)->diff($currentDate);
+        $numberWeeksCurrent = $numberDaysCurrent->format('%a')/7;
+
+        $currentWeek = round($numberWeeks) - round($numberWeeksCurrent);
 
         foreach($teacherSchedules as $teacherSchedule) {
             if(!in_array($teacherSchedule->group->id, $currentGroup)) {
@@ -115,7 +123,8 @@ class AssistanceController extends Controller
                 'daysSchedule' => $daysSchedule,
                 'students' => $group,
                 'groupSelected' => '',
-                'subject' => $subject
+                'subject' => $subject,
+                'currentWeek' => $currentWeek
             ));
         }
 
@@ -137,7 +146,8 @@ class AssistanceController extends Controller
             'students' => $group->students,
             'groupSelected' => $group->id,
             'assistances' => $assistances,
-            'subject' => $subject
+            'subject' => $subject,
+            'currentWeek' => $currentWeek
         ));
     }
 
