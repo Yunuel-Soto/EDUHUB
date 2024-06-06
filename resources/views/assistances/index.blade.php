@@ -12,10 +12,11 @@
                     <select name="group" id="">
                         <option value="">-- Selecciona grupo --</option>
                         @foreach ($groups as $group)
-                            <option value="{{ $group->id }}">{{ $group->name }} - {{ $group->career->name }}</option>
                             @if ($group->id == $groupSelected)
                                 <option value="{{ $group->id }}" selected="selected">{{ $group->name }} -
                                     {{ $group->career->name }}</option>
+                            @else
+                                <option value="{{ $group->id }}">{{ $group->name }} - {{ $group->career->name }}</option>
                             @endif
                         @endforeach
                     </select>
@@ -72,12 +73,12 @@
                                                 @if (isset($assistances[$c]))
                                                     <td class="assistance_cont_{{ $c }}">
                                                         <a class="a_editable" id="assistance-{{ $c }}"
-                                                            onClick="addEditable({{ $c }})">{{ $assistances[$c]->typeAssistance }}</a>
+                                                            onClick="addEditable({{ $c }}, {{ $groupSelected }}, {{ $subject }}, {{ $student }}, '{{ $day }}')">{{ $assistances[$c]->typeAssistance }}</a>
                                                     </td>
                                                 @else
                                                     <td class="assistance_cont_{{ $c }}">
                                                         <a class="a_editable" id="assistance-{{ $c }}"
-                                                            onClick="addEditable({{ $c }})">N/A</a>
+                                                            onClick="addEditable({{ $c }}, {{ $groupSelected }}, {{ $subject->id }}, {{ $student->id }}, '{{ $day }}')">N/A</a>
                                                     </td>
                                                 @endif
                                                 @php($c = $c + 1)
@@ -94,29 +95,37 @@
     </div>
 
     <script>
-        function addEditable($c) {
-            console.log('click')
-            $ancla = $(`#assistance-${ $c }`);
-
+        function addEditable($c, $groupSelected, $subject, $student, $day) {
+            text = $(`#assistance-${ $c }`).text();
             var $form =
                 `<form class="form_editable" id="assistance_form_${ $c }" method="POST" >` +
                 '@csrf' +
-                '<select name="value" class="input_editable">' +
+                `<select name="value" id="editable_${$c}" class="input_editable">` +
                 '<option value="N/A">N/A</option>' +
                 '<option value="X">X</option>' +
                 '<option value="O">O</option>' +
                 '</select>' +
                 `<button type="submit" id="btn_assistance_${ $c }" class="btn_editable btn_accept"><img src="{{ asset('assets/img/successbtn.png') }}"/></button>` +
-                `<button type="button" id="btn_cancel_${ $c }" class="btn_editable btn_cancel">X</button>` +
+                `<button type="button" onClick="removeEditable(${$c}, '${text}')" id="btn_cancel_${ $c }" class="btn_editable btn_cancel">X</button>` +
                 '</form>';
+
             $(`#assistance-${ $c }`).before($form);
+
+            $(`#btn_assistance_${ $c }`).on('click', function(e) {
+                var val = $(`editable_${$c}`).val();
+                e.preventDefault();
+            })
+
             $(`#assistance-${ $c }`).remove();
         }
 
-        function removeEditable($c) {
-            $('#assistance_form_{{ $c }}_{{ $student->id }}')
+        function removeEditable($c, $texto) {
+            $ancla = `<a class="a_editable" id="assistance-${ $c }" onClick = "addEditable(${ $c })" > ` +
+                `${$texto} </a>`;
+
+            $(`#assistance_form_${ $c }`)
                 .before($ancla);
-            $('#assistance_form_{{ $c }}_{{ $student->id }}')
+            $(`#assistance_form_${ $c }`)
                 .remove();
         }
 
@@ -126,50 +135,15 @@
 
             var currentWeek = {{ $currentWeek }};
 
+            console.log(currentWeek);
+
             var $table = $('#content_tables');
 
             var translation = 102 * currentWeek;
 
             $table.css('transform', 'translateX(' + -translation + '%)');
 
-            @php($c = 0)
-            @for ($i = 1; $i <= $numberWeek; $i++)
-                @foreach ($students as $student)
-                    @foreach ($days as $day)
-                        @if (in_array($day, $daysSchedule))
-                            // $('#assistance-{{ $c }}').on('click', function(e) {
-                            //     e.preventDefault();
-                            //     $ancla = $('#assistance-{{ $c }}');
-
-                            //     var $form =
-                            //         '<form class="form_editable" id="assistance_form_{{ $c }}_{{ $student->id }}" method="POST" >' +
-                            //         '@csrf' +
-                            //         '<select name="value" class="input_editable">' +
-                            //         '<option value="N/A">N/A</option>' +
-                            //         '<option value="X">X</option>' +
-                            //         '<option value="O">O</option>' +
-                            //         '</select>' +
-                            //         '<button type="submit" id="btn_assistance_{{ $c }}" class="btn_editable btn_accept"><img src="{{ asset('assets/img/successbtn.png') }}"/></button>' +
-                            //         '<button type="button" id="btn_cancel_{{ $c }}" class="btn_editable btn_cancel">X</button>' +
-                            //         '</form>';
-                            //     $('#assistance-{{ $c }}').before($form);
-                            //     $('#assistance-{{ $c }}').remove();
-
-                            //     $('#btn_cancel_{{ $c }}').on('click', function(e) {
-                            //         console.log('click');
-                            //         e.preventDefault();
-                            //         $('#assistance_form_{{ $c }}_{{ $student->id }}')
-                            //             .before($ancla);
-                            //         $('#assistance_form_{{ $c }}_{{ $student->id }}')
-                            //             .remove();
-                            //     });
-
-                            // })
-                            @php($c = $c + 1)
-                        @endif
-                    @endforeach
-                @endforeach
-            @endfor
+            //
             $('.btn-sm').css('display', 'none');
         });
     </script>

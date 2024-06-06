@@ -76,21 +76,24 @@ class AssistanceController extends Controller
         }
 
         foreach ($teacherSchedules as $key => $teacherSchedule) {
-            $startDate = $teacherSchedule->startDate;
-            $endDate = $teacherSchedule->endDate;
+            $startDate = date_create($teacherSchedule->startDate);
+            $endDate = date_create($teacherSchedule->endDate);
             break;
         }
 
-        $numberDays = date_create($startDate)->diff(date_create($endDate));
+        $diff = date_diff($startDate, $endDate);
+
+        $numberDays = $diff->days;
 
         // Obtiene la diferencia de semanas, para contar cuantas semanas son por cuatri
-        $numberWeeks = $numberDays->format('%a')/7;
+        $numberWeeks = floor($numberDays/7);
 
         // Hacer algo parecido para saber en que semana va
-        $numberDaysCurrent = date_create($endDate)->diff($currentDate);
-        $numberWeeksCurrent = $numberDaysCurrent->format('%a')/7;
+        $diff = date_diff($currentDate, $endDate);
+        $numberDaysCurrent = $diff->days;
+        $numberWeeksCurrent = floor($numberDaysCurrent)/7;
 
-        $currentWeek = round($numberWeeks) - round($numberWeeksCurrent);
+        $currentWeek = $numberWeeks - $numberWeeksCurrent;
 
         foreach($teacherSchedules as $teacherSchedule) {
             if(!in_array($teacherSchedule->group->id, $currentGroup)) {
@@ -118,7 +121,7 @@ class AssistanceController extends Controller
                 'months' => $months,
                 'startDate' => $startDate,
                 'endDate' => $endDate,
-                'numberDays' => $numberDays->format('%a'),
+                'numberDays' => $numberDays,
                 'numberWeek' => round($numberWeeks),
                 'daysSchedule' => $daysSchedule,
                 'students' => $group,
@@ -138,16 +141,16 @@ class AssistanceController extends Controller
             'teacherSchedules' => $teacherSchedules,
             'days' => $days,
             'months' => $months,
-            'startDate' => $startDate,
-            'endDate' => $endDate,
-            'numberDays' => $numberDays->format('%a'),
+            'startDate' => $startDate->format('Y-m-d'),
+            'endDate' => $endDate->format('Y-m-d'),
+            'numberDays' => $numberDays,
             'numberWeek' => round($numberWeeks),
             'daysSchedule' => $daysSchedule,
             'students' => $group->students,
             'groupSelected' => $group->id,
             'assistances' => $assistances,
             'subject' => $subject,
-            'currentWeek' => $currentWeek
+            'currentWeek' => round($currentWeek)
         ));
     }
 
